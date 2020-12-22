@@ -1,0 +1,7 @@
+library("readxl") 
+italy <- read_excel("wide.xlsx")
+library(tidyr)
+install.packages("tidyr")
+italy_long <- gather(italy, GL, amount, "41400":"41520", factor_key=TRUE)
+library("writexl")
+write_xlsx(italy_long, "C:\\Users\\jliao\\Desktop\\us_long122021.xlsx")
